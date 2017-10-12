@@ -81,7 +81,7 @@ CONTACTFANART  = 'http://'
 # Enable Auto Update 'Yes' or 'No'
 AUTOUPDATE     = 'No'
 # Url to wizard version
-WIZARDFILE     = 'https://raw.githubusercontent.com/kodibx/kodibx/master//autobuilds.txt'
+WIZARDFILE     = 'https://raw.githubusercontent.com/kodibx/kodibx/master/autobuilds.txt'
 #########################################################
 
 #########################################################
@@ -90,18 +90,18 @@ WIZARDFILE     = 'https://raw.githubusercontent.com/kodibx/kodibx/master//autobu
 # Enable Auto Install 'Yes' or 'No'
 AUTOINSTALL    = 'no'
 # Addon ID for the repository
-REPOID         = 'repository.wolfcreations'
+REPOID         = 'repository.kodibx'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML   = 'https://raw.githubusercontent.com/wadeknelsen/wolfcreations/master/zips/addons.xml'
+REPOADDONXML   = 'https://raw.githubusercontent.com/kodibx/repository.kodibx/master/addon.xml'
 # Url to folder zip is located in
-REPOZIPURL     = 'https://raw.githubusercontent.com/wadeknelsen/wolfcreations/master/zips/repository.wolfcreations'
+REPOZIPURL     = 'https://github.com/kodibx/kodi-xbmc-addons/blob/master/repo/plugin.program.kodibx'
 #########################################################
 
 #########################################################
 ### NOTIFICATION WINDOW##################################
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE         = 'No'
+ENABLE         = 'Yes'
 # Url to notification file
 NOTIFICATION   = 'https://raw.githubusercontent.com/kodibx/kodibx/master/notify.txt'
 # Use either 'Text' or 'Image'
