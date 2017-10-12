@@ -12,7 +12,7 @@ BUILDFILE      = 'https://raw.githubusercontent.com/kodibx/kodibx/master/wizard.
 # 0 being every startup of kodi
 UPDATECHECK    = 0
 # Text File with apk info in it.
-APKFILE        = 'https://raw.githubusercontent.com/kodibx/kodibx/master/apk.txt'
+APKFILE        = 'http://stvmc.net/APK/apktxts/SpinzTV-apk.txt'
 # Text File with Youtube Videos urls.  Leave as 'http://' to ignore
 YOUTUBETITLE   = ''
 YOUTUBEFILE    = 'http://'
@@ -34,17 +34,28 @@ ART            = os.path.join(PATH, 'resources', 'art')
 # Example:  ICONMAINT     = os.path.join(ART, 'mainticon.png')
 #           ICONSETTINGS  = 'http://aftermathwizard.net/repo/wizard/settings.png'
 # Leave as http:// for default icon
-ICONBUILDS     = 'http://'
-ICONMAINT      = 'http://'
-ICONAPK        = 'http://'
-ICONADDONS     = 'http://'
+ICONBUILDS     = 'http://stvmc.net/wizicons/buildsicon.png'
+ICONMAINT      = 'http://stvmc.net/wizicons/mainticon.png'
+ICONAPK        = 'http://stvmc.net/wizicons/apkicon.png'
+ICONADDONS     = 'http://stvmc.net/wizicons/kodiicon.png'
 ICONYOUTUBE    = 'http://'
-ICONSAVE       = 'http://'
-ICONTRAKT      = 'http://'
-ICONREAL       = 'http://'
-ICONLOGIN      = 'http://'
-ICONCONTACT    = 'http://'
-ICONSETTINGS   = 'http://'
+ICONSAVE       = 'http://stvmc.net/wizicons/saveicon.png'
+ICONTRAKT      = 'http://stvmc.net/wizicons/trakticon.png'
+ICONREAL       = 'http://stvmc.net/wizicons/realicon.png'
+ICONLOGIN      = 'http://stvmc.net/wizicons/buildsicon.png'
+ICONCONTACT    = 'http://stvmc.net/wizicons/contacticon.png'
+ICONSETTINGS   = 'http://stvmc.net/wizicons/settingsicon.png'
+ICONSPINZ      = 'http://stvmc.net/wizicons/spinzicon.png'
+ICONKODI       = 'http://stvmc.net/wizicons/kodiicon.png'
+ICONSPMC       = 'http://stvmc.net/wizicons/kodiicon.png'
+ICONGAMES      = 'http://stvmc.net/wizicons/gamesicon.png'
+ICONMOVIES     = 'http://stvmc.net/wizicons/moviesicon.png'
+ICONANDROID    = 'http://stvmc.net/wizicons/droidicon.png'
+ICONSPEED      = 'http://stvmc.net/wizicons/speedicon.png'
+ICONPRO        = 'http://stvmc.net/wizicons/proicon.png'
+ICONADDONS     = 'http://stvmc.net/wizicons/spinzicon.png'
+ICONYOUTUBE    = 'http://stvmc.net/wizicons/spinzicon.png'
+ICONLOGIN      = 'http://stvmc.net/wizicons/spinzicon.png'
 # Hide the ====== seperators 'Yes' or 'No'
 HIDESPACERS    = 'No'
 # Character used in seperator
