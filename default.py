@@ -1312,6 +1312,8 @@ def buildWizard(name, type, theme=None, over=False):
 			DP.update(0, title,'', 'Please Wait')
 			extract.all(lib,USERDATA,DP, title=title)
 			DP.close()
+			try: os.remove(lib)
+			except: pass
 			wiz.defaultSkin()
 			wiz.lookandFeelData('save')
 			if INSTALLMETHOD == 1: todo = 1
