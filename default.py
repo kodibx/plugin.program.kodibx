@@ -1499,8 +1499,7 @@ def thirdPartyInstall(name, url):
 	if not os.path.exists(PACKAGES): os.makedirs(PACKAGES)
 	DP.create(ADDONTITLE,'[COLOR %s][B]Downloading:[/B][/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR2, COLOR1, name),'', 'Please Wait')
 	lib=os.path.join(PACKAGES, '%s.zip' % zipname)
-	try: os.remove(lib)
-	except: pass
+	os.remove(lib)
 	downloader.download(url, lib, DP)
 	xbmc.sleep(500)
 	title = '[COLOR %s][B]Installing:[/B][/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR2, COLOR1, name)
