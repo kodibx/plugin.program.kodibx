@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import os, xbmc, xbmcaddon
 
 #########################################################
@@ -12,7 +13,7 @@ BUILDFILE      = 'https://raw.githubusercontent.com/kodibx/kodibx/master/wizard.
 # 0 being every startup of kodi
 UPDATECHECK    = 0
 # Text File with apk info in it.
-APKFILE        = 'http://stvmc.net/APK/apktxts/SpinzTV-apk.txt'
+APKFILE        = 'https://raw.githubusercontent.com/kodibx/kodibx/master/apk.txt'
 # Text File with Youtube Videos urls.  Leave as 'http://' to ignore
 YOUTUBETITLE   = ''
 YOUTUBEFILE    = 'http://'
@@ -34,30 +35,19 @@ ART            = os.path.join(PATH, 'resources', 'art')
 # Example:  ICONMAINT     = os.path.join(ART, 'mainticon.png')
 #           ICONSETTINGS  = 'http://aftermathwizard.net/repo/wizard/settings.png'
 # Leave as http:// for default icon
-ICONBUILDS     = 'http://stvmc.net/wizicons/buildsicon.png'
-ICONMAINT      = 'http://stvmc.net/wizicons/mainticon.png'
-ICONAPK        = 'http://stvmc.net/wizicons/apkicon.png'
-ICONADDONS     = 'http://stvmc.net/wizicons/kodiicon.png'
+ICONBUILDS     = 'http://'
+ICONMAINT      = 'http://'
+ICONAPK        = 'http://'
+ICONADDONS     = 'http://'
 ICONYOUTUBE    = 'http://'
-ICONSAVE       = 'http://stvmc.net/wizicons/saveicon.png'
-ICONTRAKT      = 'http://stvmc.net/wizicons/trakticon.png'
-ICONREAL       = 'http://stvmc.net/wizicons/realicon.png'
-ICONLOGIN      = 'http://stvmc.net/wizicons/buildsicon.png'
-ICONCONTACT    = 'http://stvmc.net/wizicons/contacticon.png'
-ICONSETTINGS   = 'http://stvmc.net/wizicons/settingsicon.png'
-ICONSPINZ      = 'http://stvmc.net/wizicons/spinzicon.png'
-ICONKODI       = 'http://stvmc.net/wizicons/kodiicon.png'
-ICONSPMC       = 'http://stvmc.net/wizicons/kodiicon.png'
-ICONGAMES      = 'http://stvmc.net/wizicons/gamesicon.png'
-ICONMOVIES     = 'http://stvmc.net/wizicons/moviesicon.png'
-ICONANDROID    = 'http://stvmc.net/wizicons/droidicon.png'
-ICONSPEED      = 'http://stvmc.net/wizicons/speedicon.png'
-ICONPRO        = 'http://stvmc.net/wizicons/proicon.png'
-ICONADDONS     = 'http://stvmc.net/wizicons/spinzicon.png'
-ICONYOUTUBE    = 'http://stvmc.net/wizicons/spinzicon.png'
-ICONLOGIN      = 'http://stvmc.net/wizicons/spinzicon.png'
+ICONSAVE       = 'http://'
+ICONTRAKT      = 'http://'
+ICONREAL       = 'http://'
+ICONLOGIN      = 'http://'
+ICONCONTACT    = 'http://'
+ICONSETTINGS   = 'http://'
 # Hide the ====== seperators 'Yes' or 'No'
-HIDESPACERS    = 'No'
+HIDESPACERS    = 'YES'
 # Character used in seperator
 SPACER         = '*'
 
@@ -66,13 +56,13 @@ SPACER         = '*'
 COLOR1         = 'deepskyblue'
 COLOR2         = 'white'
 # Primary menu items   / %s is the menu item and is required
-THEME1         = '[COLOR '+COLOR1+'][B][I]([COLOR '+COLOR2+']KODIBX[/COLOR])[/B][/COLOR] [COLOR '+COLOR2+']%s[/COLOR][/I]'
+THEME1         = '[COLOR '+COLOR1+'][B][I][COLOR '+COLOR2+'][/COLOR][/B][/COLOR] [COLOR '+COLOR2+']%s[/COLOR][/I]'
 # Build Names          / %s is the menu item and is required
 THEME2         = '[COLOR '+COLOR2+']%s[/COLOR]'
 # Alternate items      / %s is the menu item and is required
 THEME3         = '[COLOR '+COLOR1+']%s[/COLOR]'
 # Current Build Header / %s is the menu item and is required
-THEME4         = '[COLOR '+COLOR1+']Current Build:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
+THEME4         = '[COLOR '+COLOR1+']Version du Build installée:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 # Current Theme Header / %s is the menu item and is required
 THEME5         = '[COLOR '+COLOR1+']Current Theme:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 
@@ -80,7 +70,7 @@ THEME5         = '[COLOR '+COLOR1+']Current Theme:[/COLOR] [COLOR '+COLOR2+']%s[
 # Enable 'Contact' menu item 'Yes' hide or 'No' dont hide
 HIDECONTACT    = 'No'
 # You can add \n to do line breaks
-CONTACT        = 'Thank you for choosing Kodibx'
+CONTACT        = 'Thank you for choosing Kodi Support Wizard.\r\n\r\nContact us on facebook at https://www.facebook.com/groups/1845268792391503/'
 #Images used for the contact window.  http:// for default icon and fanart
 CONTACTICON    = 'http://'
 CONTACTFANART  = 'http://'
@@ -92,7 +82,7 @@ CONTACTFANART  = 'http://'
 # Enable Auto Update 'Yes' or 'No'
 AUTOUPDATE     = 'No'
 # Url to wizard version
-WIZARDFILE     = 'https://raw.githubusercontent.com/kodibx/kodibx/master/autobuilds.txt'
+WIZARDFILE     = 'https://raw.githubusercontent.com/kodibx/kodibx/master//autobuilds.txt'
 #########################################################
 
 #########################################################
@@ -103,16 +93,16 @@ AUTOINSTALL    = 'no'
 # Addon ID for the repository
 REPOID         = 'repository.kodibx'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
-REPOADDONXML   = 'https://raw.githubusercontent.com/kodibx/repository.kodibx/master/addon.xml'
+REPOADDONXML   = 'https://raw.githubusercontent.com/wadeknelsen/wolfcreations/master/zips/addons.xml'
 # Url to folder zip is located in
-REPOZIPURL     = 'https://github.com/kodibx/kodi-xbmc-addons/blob/master/repo/plugin.program.kodibx'
+REPOZIPURL     = 'https://raw.githubusercontent.com/wadeknelsen/wolfcreations/master/zips/repository.wolfcreations'
 #########################################################
 
 #########################################################
 ### NOTIFICATION WINDOW##################################
 #########################################################
 # Enable Notification screen Yes or No
-ENABLE         = 'Yes'
+ENABLE         = 'No'
 # Url to notification file
 NOTIFICATION   = 'https://raw.githubusercontent.com/kodibx/kodibx/master/notify.txt'
 # Use either 'Text' or 'Image'
