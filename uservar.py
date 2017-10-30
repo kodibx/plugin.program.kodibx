@@ -1,4 +1,3 @@
-#-*- coding: utf-8 -*-
 import os, xbmc, xbmcaddon
 
 #########################################################
@@ -47,7 +46,7 @@ ICONLOGIN      = 'http://'
 ICONCONTACT    = 'http://'
 ICONSETTINGS   = 'http://'
 # Hide the ====== seperators 'Yes' or 'No'
-HIDESPACERS    = 'YES'
+HIDESPACERS    = 'No'
 # Character used in seperator
 SPACER         = '*'
 
@@ -56,13 +55,13 @@ SPACER         = '*'
 COLOR1         = 'deepskyblue'
 COLOR2         = 'white'
 # Primary menu items   / %s is the menu item and is required
-THEME1         = '[COLOR '+COLOR1+'][B][I][COLOR '+COLOR2+'][/COLOR][/B][/COLOR] [COLOR '+COLOR2+']%s[/COLOR][/I]'
+THEME1         = '[COLOR '+COLOR1+'][B][I]([COLOR '+COLOR2+']Aftermath[/COLOR])[/B][/COLOR] [COLOR '+COLOR2+']%s[/COLOR][/I]'
 # Build Names          / %s is the menu item and is required
 THEME2         = '[COLOR '+COLOR2+']%s[/COLOR]'
 # Alternate items      / %s is the menu item and is required
 THEME3         = '[COLOR '+COLOR1+']%s[/COLOR]'
 # Current Build Header / %s is the menu item and is required
-THEME4         = '[COLOR '+COLOR1+']Version du Build installée:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
+THEME4         = '[COLOR '+COLOR1+']Current Build:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 # Current Theme Header / %s is the menu item and is required
 THEME5         = '[COLOR '+COLOR1+']Current Theme:[/COLOR] [COLOR '+COLOR2+']%s[/COLOR]'
 
@@ -91,7 +90,7 @@ WIZARDFILE     = 'https://raw.githubusercontent.com/kodibx/kodibx/master//autobu
 # Enable Auto Install 'Yes' or 'No'
 AUTOINSTALL    = 'no'
 # Addon ID for the repository
-REPOID         = 'repository.kodibx'
+REPOID         = 'repository.wolfcreations'
 # Url to Addons.xml file in your repo folder(this is so we can get the latest version)
 REPOADDONXML   = 'https://raw.githubusercontent.com/wadeknelsen/wolfcreations/master/zips/addons.xml'
 # Url to folder zip is located in

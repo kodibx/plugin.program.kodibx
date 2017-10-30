@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<addon id="plugin.program.kodibx" name="[COLOR blue]kodibx Wizard[/COLOR]" version="1.1.6" provider-name="kodibx">
+<addon id="plugin.program.kodibx" name="kodibx" version="1.1.6" provider-name="kodibx">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>executable</provides>
+        <provides>executable</provides>
   </extension>
   <extension point="xbmc.service" library="startup.py" start="startup" />
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">[COLOR blue]kodibx Wizard[/COLOR]</summary>
-    <description lang="en">Created by kodibx and Modified by kodibx. The Wizard allows you to gain access to the latest kodibx Builds and give you the opportunity to keep your Trakt and Real-Debrid info and much much more.</description>
+    <summary lang="en">Aftermath Wizard</summary>
+    <description lang="en">Aftermath Wizard allows you to get access to the latest Aftermath Custom Builds.</description>
     <platform>all</platform>
   </extension>
 </addon>
