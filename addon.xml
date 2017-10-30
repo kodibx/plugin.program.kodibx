@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 
-<addon id="plugin.program.kodibx" name="[COLOR blue]kodibx Wizard[/COLOR]" version="1.1.6" provider-name="kodibx">
+<addon id="plugin.video.kodibx" name="[COLOR blue]kodibx Wizard[/COLOR]" version="1.1.6" provider-name="kodibx">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
   </requires>
