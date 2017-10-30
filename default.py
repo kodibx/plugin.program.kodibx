@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 ################################################################################
 #      Copyright (C) 2015 Surfacingx                                           #
 #                                                                              #
@@ -190,17 +191,17 @@ def index():
         themefile = wiz.themeCount(BUILDNAME)
         if not themefile == False:
             addFile('None' if BUILDTHEME == "" else BUILDTHEME, 'theme', BUILDNAME, themeit=THEME5)
-    else: addDir('None', 'builds', themeit=THEME4)
+    else: addDir('None', 'installation de KODI', themeit=THEME4)
     if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
-    addDir ('Builds'        ,'builds',   icon=ICONBUILDS,   themeit=THEME1)
+    addDir ('installation de KODI'        ,'installation de KODI',   icon=ICONBUILDS,   themeit=THEME1)
     addDir ('Maintenance'   ,'maint',    icon=ICONMAINT,    themeit=THEME1)
     if wiz.platform() == 'android' or DEVELOPER == 'true': addDir ('Apk Installer' ,'apk', icon=ICONAPK, themeit=THEME1)
-    if not ADDONFILE == 'http://': addDir ('Addon Installer' ,'addons', icon=ICONADDONS, themeit=THEME1)
+    # if not ADDONFILE == 'http://': addDir ('Addon Installer' ,'addons', icon=ICONADDONS, themeit=THEME1)
     if not YOUTUBEFILE == 'http://' and not YOUTUBETITLE == '': addDir (YOUTUBETITLE ,'youtube', icon=ICONYOUTUBE, themeit=THEME1)
-    addDir ('Save Data'     ,'savedata', icon=ICONSAVE,     themeit=THEME1)
+    #addDir ('Save Data'     ,'savedata', icon=ICONSAVE,     themeit=THEME1)
     if HIDECONTACT == 'No': addFile('Contact' ,'contact', icon=ICONCONTACT,  themeit=THEME1)
     if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
-    addFile('Settings'      ,'settings', icon=ICONSETTINGS, themeit=THEME1)
+    #addFile('Settings'      ,'settings', icon=ICONSETTINGS, themeit=THEME1)
     if DEVELOPER == 'true': addDir('Developer Menu','developer', icon=ICONSETTINGS, themeit=THEME1)
     setView('files', 'viewType')
 
@@ -208,7 +209,7 @@ def buildMenu():
     WORKINGURL = wiz.workingURL(BUILDFILE)
     if not WORKINGURL == True:
         addFile('%s Version: %s' % (MCNAME, KODIV), '', icon=ICONBUILDS, themeit=THEME3)
-        addDir ('Save Data Menu'       ,'savedata', icon=ICONSAVE,     themeit=THEME3)
+        #addDir ('Save Data Menu'       ,'savedata', icon=ICONSAVE,     themeit=THEME3)
         if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
         addFile('Url for txt file not valid', '', icon=ICONBUILDS, themeit=THEME3)
         addFile('%s' % WORKINGURL, '', icon=ICONBUILDS, themeit=THEME3)
@@ -228,7 +229,7 @@ def buildMenu():
                 viewBuild(match[0][0])
                 return
         addFile('%s Version: %s' % (MCNAME, KODIV), '', icon=ICONBUILDS, themeit=THEME3)
-        addDir ('Save Data Menu'       ,'savedata', icon=ICONSAVE,     themeit=THEME3)
+        #addDir ('Save Data Menu'       ,'savedata', icon=ICONSAVE,     themeit=THEME3)
         if HIDESPACERS == 'No': addFile(wiz.sep(), '', themeit=THEME3)
         if third == True:
             for item in addin:
@@ -255,7 +256,7 @@ def buildMenu():
                                 addDir('[%s] %s (v%s)' % (float(kodi), name, version), 'viewbuild', name, description=description, fanart=fanart,icon=icon, menu=menu, themeit=THEME2)
                 if count17 > 0:
                     state = '+' if SHOW17 == 'false' else '-'
-                    addFile('[B]%s Krypton Builds(%s)[/B]' % (state, count17), 'togglesetting',  'show17', themeit=THEME3)
+                    addFile('%s Version de type krypton disponible pour l\'installation (%s)' % (state, count17), 'togglesetting',  'show17', themeit=THEME3)
                     if SHOW17 == 'true':
                         for name, version, url, gui, kodi, theme, icon, fanart, adult, description in match:
                             if not SHOWADULT == 'true' and adult.lower() == 'yes': continue
@@ -326,9 +327,9 @@ def viewBuild(name):
         if warning == True:
             addFile('[I]Build designed for kodi version %s(installed: %s)[/I]' % (str(kodi), str(KODIV)), '', fanart=fanart, icon=icon, themeit=THEME3)
         addFile(wiz.sep('INSTALL'), '', fanart=fanart, icon=icon, themeit=THEME3)
-        addFile('Fresh Install'   , 'install', name, 'fresh'  , description=description, fanart=fanart, icon=icon, themeit=THEME1)
-        addFile('Standard Install', 'install', name, 'normal' , description=description, fanart=fanart, icon=icon, themeit=THEME1)
-        if not gui == 'http://': addFile('Apply guiFix'    , 'install', name, 'gui'     , description=description, fanart=fanart, icon=icon, themeit=THEME1)
+        addFile('--> Installation avec supression des anciennes données'   , 'install', name, 'fresh'  , description=description, fanart=fanart, icon=icon, themeit=THEME2)
+        addFile('--> Installation en conservant les données (non recommandée)', 'install', name, 'normal' , description=description, fanart=fanart, icon=icon, themeit=THEME2)
+        if not gui == 'http://': addFile('Apply guiFix'    , 'install', name, 'gui'     , description=description, fanart=fanart, icon=icon, themeit=THEME2)
         if not themefile == 'http://':
             if wiz.workingURL(themefile) == True:
                 addFile(wiz.sep('THEMES'), '', fanart=fanart, icon=icon, themeit=THEME3)
@@ -855,7 +856,7 @@ def writeAdvanced(name, url):
     ADVANCEDWORKING = wiz.workingURL(url)
     if ADVANCEDWORKING == True:
         if os.path.exists(ADVANCED): choice = DIALOG.yesno(ADDONTITLE, "[COLOR %s]Would you like to overwrite your current Advanced Settings with [COLOR %s]%s[/COLOR]?[/COLOR]" % (COLOR2, COLOR1, name), yeslabel="[B][COLOR green]Overwrite[/COLOR][/B]", nolabel="[B][COLOR red]Cancel[/COLOR][/B]")
-        else: choice = DIALOG.yesno(ADDONTITLE, "[COLOR %s]Would you like to download and install [COLOR %s]%s[/COLOR]?[/COLOR]" % (COLOR2, COLOR1, name), yeslabel="[B][COLOR green]Install[/COLOR][/B]", nolabel="[B][COLOR red]Cancel[/COLOR][/B]")
+        else: choice = DIALOG.yesno(ADDONTITLE, "[COLOR %s]test [COLOR %s]%s[/COLOR]?[/COLOR]" % (COLOR2, COLOR1, name), yeslabel="[B][COLOR green]Install[/COLOR][/B]", nolabel="[B][COLOR red]Cancel[/COLOR][/B]")
 
         if choice == 1:
             file = wiz.openURL(url)
@@ -943,7 +944,7 @@ def systemInfo():
             elif not (prov[0]).find('executable') == -1: programs.append(foldername)
             elif not (prov[0]).find('video') == -1: video.append(foldername)
             elif not (prov[0]).find('audio') == -1: music.append(foldername)
-            elif not (prov[0]).find('image') == -1: picture.append(foldername)
+            elif not (prov[0]).find('installation de KODI') == -1: picture.append(foldername)
 
     addFile('[B]Media Center Info:[/B]', '', icon=ICONMAINT, themeit=THEME2)
     addFile('[COLOR %s]Name:[/COLOR] [COLOR %s]%s[/COLOR]' % (COLOR1, COLOR2, data[0]), '', icon=ICONMAINT, themeit=THEME3)
@@ -1344,7 +1345,7 @@ def buildWizard(name, type, theme=None, over=False):
             yes_pressed = DIALOG.yesno("%s - [COLOR red]WARNING!![/COLOR]" % ADDONTITLE, '[COLOR %s]There is a chance that the skin will not appear correctly' % COLOR2, 'When installing a %s build on a Kodi %s install' % (wiz.checkBuild(name, 'kodi'), KODIV), 'Would you still like to install: [COLOR %s]%s v%s[/COLOR]?[/COLOR]' % (COLOR1, name, wiz.checkBuild(name,'version')), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',yeslabel='[B][COLOR green]Yes, Install[/COLOR][/B]')
         else:
             if not over == False: yes_pressed = 1
-            else: yes_pressed = DIALOG.yesno(ADDONTITLE, '[COLOR %s]Would you like to Download and Install:' % COLOR2, '[COLOR %s]%s v%s[/COLOR]?[/COLOR]' % (COLOR1, name, wiz.checkBuild(name,'version')), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]',yeslabel='[B][COLOR green]Yes, Install[/COLOR][/B]')
+            else:yes_pressed=DIALOG.yesno(ADDONTITLE, "[COLOR %s]Attention, ce build va installer l'addon français VSTREAM" % COLOR2, "il permet l'accès à des sites de streaming. En cliquant sur continuer", "vous êtes responsable de l'utilisation que vous en ferez. [/COLOR]", nolabel='[B][COLOR red]Non, Annuler[/COLOR][/B]', yeslabel='[B][COLOR green]Continuer[/COLOR][/B]') 
         if yes_pressed:
             wiz.clearS('build')
             buildzip = wiz.checkBuild(name, 'url')
@@ -1857,7 +1858,7 @@ def buildInfo(name):
             if not theme == "http://":
                 themecount = wiz.themeCount(name, False)
                 msg += "[COLOR %s]Build Theme(s):[/COLOR] [COLOR %s]%s[/COLOR][CR]" % (COLOR2, COLOR1, ', '.join(themecount))
-            msg += "[COLOR %s]Kodi Version:[/COLOR] [COLOR %s]%s[/COLOR][CR]" % (COLOR2, COLOR1, kodi)
+            msg += "[COLOR %s]Votre version de Kodi:[/COLOR] [COLOR %s]%s[/COLOR][CR]" % (COLOR2, COLOR1, kodi)
             msg += "[COLOR %s]Adult Content:[/COLOR] [COLOR %s]%s[/COLOR][CR]" % (COLOR2, COLOR1, adult)
             msg += "[COLOR %s]Description:[/COLOR] [COLOR %s]%s[/COLOR][CR]" % (COLOR2, COLOR1, description)
             wiz.TextBox(ADDONTITLE, msg)
@@ -1983,8 +1984,8 @@ def freshStart(install=None, over=False):
         wiz.setS('loginlastsave', str(THREEDAYS))
     if over == True: yes_pressed = 1
     elif install == 'restore': yes_pressed=DIALOG.yesno(ADDONTITLE, "[COLOR %s]Do you wish to restore your" % COLOR2, "Kodi configuration to default settings", "Before installing the local backup?[/COLOR]", nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR green]Continue[/COLOR][/B]')
-    elif install: yes_pressed=DIALOG.yesno(ADDONTITLE, "[COLOR %s]Do you wish to restore your" % COLOR2, "Kodi configuration to default settings", "Before installing [COLOR %s]%s[/COLOR]?" % (COLOR1, install), nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR green]Continue[/COLOR][/B]')
-    else: yes_pressed=DIALOG.yesno(ADDONTITLE, "[COLOR %s]Do you wish to restore your" % COLOR2, "Kodi configuration to default settings?[/COLOR]", nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR green]Continue[/COLOR][/B]')
+    elif install: yes_pressed=DIALOG.yesno(ADDONTITLE, "[COLOR %s]Attention, ce build va installer l'addon français VSTREAM" % COLOR2, "il permet l'accès à des sites de streaming. En cliquant sur continuer", "vous êtes responsable de l'utilisation que vous en ferez. [/COLOR]", nolabel='[B][COLOR red]Non, Annuler[/COLOR][/B]', yeslabel='[B][COLOR green]Continuer[/COLOR][/B]')
+    else: yes_pressed=DIALOG.yesno(ADDONTITLE, "[COLOR %s]Voulez-vous vraiment supprimer" % COLOR2, "votre ancienne configuaration de KODI?[/COLOR]", nolabel='[B][COLOR red]No, Cancel[/COLOR][/B]', yeslabel='[B][COLOR green]Continue[/COLOR][/B]')
     if yes_pressed:
         if not wiz.currSkin() in ['skin.confluence', 'skin.estuary']:
             skin = 'skin.confluence' if KODIV < 17 else 'skin.estuary'
@@ -2249,7 +2250,7 @@ def setView(content, viewType):
 if   mode==None             : index()
 
 elif mode=='wizardupdate'   : wiz.wizardUpdate()
-elif mode=='builds'         : buildMenu()
+elif mode=='installation de KODI'         : buildMenu()
 elif mode=='viewbuild'      : viewBuild(name)
 elif mode=='buildinfo'      : buildInfo(name)
 elif mode=='buildpreview'   : buildVideo(name)
