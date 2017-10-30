@@ -229,7 +229,7 @@ if AUTOINSTALL == 'Yes' and not os.path.exists(os.path.join(ADDONS, REPOID)):
 			installzip = '%s-%s.zip' % (REPOID, ver[0])
 			workingrepo = wiz.workingURL(REPOZIPURL+installzip)
 			if workingrepo == True:
-				DP.create(ADDONTITLE,'Téléchargement du Repo...','', 'Merci de patienter')
+				DP.create(ADDONTITLE,'Telechargement du Repo...','', 'Merci de patienter')
 				if not os.path.exists(PACKAGES): os.makedirs(PACKAGES)
 				lib=os.path.join(PACKAGES, installzip)
 				try: os.remove(lib)
