@@ -3,8 +3,8 @@
 	<category label="Build Options">
 		<setting type="lsep" label="Current Build:"/>
 		<setting id="buildname" type="text" label="Installed Build: " enable="false" default=""/>
-		<setting id="buildversion" type="text" label="Installed Version: " enable="false" default=""/>
-		<setting id="buildtheme" type="text" label="Current Theme: " enable="false" default=""/>
+		<setting id="buildversion" type="text" label="Version Installée: " enable="false" default=""/>
+		<setting id="buildtheme" type="text" label="Theme Current: " enable="false" default=""/>
 		<setting id="latestversion" type="text" label="Latest Version: " enable="false" default=""/>
 		<setting id="lastbuildcheck" type="text" label="Next check for build update: " enable="false" default=""/>
 		<setting id="disableupdate" type="bool" label="Disable Update Notification" default="false"/>
@@ -19,7 +19,7 @@
 		<setting id="extract" type="text" label="Extract Build %" visible="false" default="100" />
 		<setting id="errors" type="text" label="Extract Error" visible="false" default="" />
 		<setting id="defaultskin" type="text" label="Default Skin: " enable="false" default="" visible="false"/>
-		<setting id="defaultskinname" type="text" label="Default Skin Name: " enable="false" default="" visible="false"/>
+		<setting id="defaultskinname" type="text" label="Name du skin par defaut: " enable="false" default="" visible="false"/>
 		<setting id="defaultskinignore" type="bool" label="Ignore default skin check:" enable="false" default="false" visible="false"/>
 		<setting id="default.enablerssfeeds" type="text" label="Default lookandfeel.enablerssfeeds:" enable="false" default="" visible="false"/>
 		<setting id="default.font" type="text" label="Default lookandfeel.font:" enable="false" default="" visible="false"/>
@@ -43,10 +43,10 @@
 		<setting type="lsep" label="Maintenance Menu: "/>
 		<setting id="showmaint" type="bool" label="Show All Maintenance Sections" default="false"/>
 		<setting type="lsep" label="Backup Location: "/>
-		<setting id="path" type="folder" label="Choose Backup Storage Location" default=""/>
-		<setting type="lsep" label="Auto Cleanup On Startup:"/>
+		<setting id="path" type="folder" label="Choisir le répertoire de Backup par defaut" default=""/>
+		<setting type="lsep" label="Auto Nettoyage au démarage:"/>
 		<setting id="autoclean" type="bool" label="Enable Auto Clean" default="true"/>
-		<setting id="clearcache" type="bool" label="Clear Cache on Startup" default="true" enable="!eq(-1,false)"/>
+		<setting id="clearcache" type="bool" label="Nettoyage du Cache au démarage" default="true" enable="!eq(-1,false)"/>
 		<setting id="clearpackages" type="bool" label="Clear Packages on Startup" default="true" enable="!eq(-2,false)"/>
 		<setting id="clearthumbs" type="bool" label="Clear Week Old Thumbnails on Startup" default="true" enable="!eq(-3,false)"/>
 		<setting id="autocleanfeq" type="enum" label="How often would you like to Auto Clean on Startup?" values="Always|Daily|3 Days|Weekly" enable="!eq(-4,false)"/>

@@ -46,12 +46,12 @@ FANART         = os.path.join(ADDONPATH,'fanart.jpg')
 ICON           = os.path.join(ADDONPATH,'icon.png')
 ART            = os.path.join(ADDONPATH,'resources', 'art')
 SKIN           = xbmc.getSkinDir()
-BUILDNAME      = wiz.getS('buildname')
-DEFAULTSKIN    = wiz.getS('defaultskin')
-DEFAULTNAME    = wiz.getS('defaultskinname')
+BUILDNAME      = wiz.getS('nom du build')
+DEFAULTSKIN    = wiz.getS('skin par defaut')
+DEFAULTNAME    = wiz.getS('nom du skin')
 DEFAULTIGNORE  = wiz.getS('defaultskinignore')
-BUILDVERSION   = wiz.getS('buildversion')
-BUILDLATEST    = wiz.getS('latestversion')
+BUILDVERSION   = wiz.getS('version du build')
+BUILDLATEST    = wiz.getS('derniere version')
 BUILDCHECK     = wiz.getS('lastbuildcheck')
 DISABLEUPDATE  = wiz.getS('disableupdate')
 AUTOCLEANUP    = wiz.getS('autoclean')
@@ -73,7 +73,7 @@ NOTIFY         = wiz.getS('notify')
 NOTEDISMISS    = wiz.getS('notedismiss')
 NOTEID         = wiz.getS('noteid')
 BACKUPLOCATION = ADDON.getSetting('path') if not ADDON.getSetting('path') == '' else HOME
-MYBUILDS       = os.path.join(BACKUPLOCATION, 'My_Builds', '')
+MYBUILDS       = os.path.join(BACKUPLOCATION, 'Mon_Builds', '')
 NOTEID         = 0 if NOTEID == "" else int(NOTEID)
 AUTOFEQ        = int(AUTOFEQ) if AUTOFEQ.isdigit() else 0
 TODAY          = date.today()
@@ -229,7 +229,7 @@ if AUTOINSTALL == 'Yes' and not os.path.exists(os.path.join(ADDONS, REPOID)):
 			installzip = '%s-%s.zip' % (REPOID, ver[0])
 			workingrepo = wiz.workingURL(REPOZIPURL+installzip)
 			if workingrepo == True:
-				DP.create(ADDONTITLE,'Downloading Repo...','', 'Please Wait')
+				DP.create(ADDONTITLE,'Telechargement du Repo...','', 'Merci de patienter')
 				if not os.path.exists(PACKAGES): os.makedirs(PACKAGES)
 				lib=os.path.join(PACKAGES, installzip)
 				try: os.remove(lib)
@@ -298,7 +298,7 @@ if INSTALLED == 'true':
 		FAILED = True
 	elif not EXTRACT == '100' and not BUILDNAME == "":
 		wiz.log("[Installed Check] Build was extracted %s/100 with [ERRORS: %s]" % (EXTRACT, EXTERROR), xbmc.LOGNOTICE)
-		yes=DIALOG.yesno(ADDONTITLE, '[COLOR %s]%s[/COLOR] [COLOR %s]was not installed correctly!' % (COLOR1, COLOR2, BUILDNAME), 'Installed: [COLOR %s]%s[/COLOR] / Error Count: [COLOR %s]%s[/COLOR]' % (COLOR1, EXTRACT, COLOR1, EXTERROR), 'Would you like to try again?[/COLOR]', nolabel='[B]No Thanks![/B]', yeslabel='[B]Retry Install[/B]')
+		yes=DIALOG.yesno(ADDONTITLE, '[COLOR %s]%s[/COLOR] [COLOR %s]a ete correctement installe!' % (COLOR1, COLOR2, BUILDNAME), 'Installed: [COLOR %s]%s[/COLOR] / Error Count: [COLOR %s]%s[/COLOR]' % (COLOR1, EXTRACT, COLOR1, EXTERROR), 'Would you like to try again?[/COLOR]', nolabel='[B]No Thanks![/B]', yeslabel='[B]Retry Install[/B]')
 		wiz.clearS('build')
 		FAILED = True
 		if yes: 
